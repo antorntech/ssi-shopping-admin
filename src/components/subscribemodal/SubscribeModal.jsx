@@ -5,53 +5,53 @@ const SubscribeModal = () => {
     <>
       {/* <!-- subscribeModal --> */}
       <div
-        class="modal fade"
+        className="modal fade"
         id="subscribeModal"
         tabindex="-1"
         aria-labelledby="subscribeModalLabel"
         aria-hidden="true"
       >
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header border-bottom-0">
+        <div className="modal-dialog modal-dialog-centered">
+          <div className="modal-content">
+            <div className="modal-header border-bottom-0">
               <button
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body">
-              <div class="text-center mb-4">
-                <div class="avatar-md mx-auto mb-4">
-                  <div class="avatar-title bg-light rounded-circle text-primary h1">
-                    <i class="mdi mdi-email-open"></i>
+            <div className="modal-body">
+              <div className="text-center mb-4">
+                <div className="avatar-md mx-auto mb-4">
+                  <div className="avatar-title bg-light rounded-circle text-primary h1">
+                    <i className="mdi mdi-email-open"></i>
                   </div>
                 </div>
 
-                <div class="row justify-content-center">
-                  <div class="col-xl-10">
-                    <h4 class="text-primary">Subscribe !</h4>
-                    <p class="text-muted font-size-14 mb-4">
+                <div className="row justify-content-center">
+                  <div className="col-xl-10">
+                    <h4 className="text-primary">Subscribe !</h4>
+                    <p className="text-muted font-size-14 mb-4">
                       Subscribe our newletter and get notification to stay
                       update.
                     </p>
 
-                    <div class="input-group bg-light rounded">
+                    <div className="input-group bg-light rounded">
                       <input
                         type="email"
-                        class="form-control bg-transparent border-0"
+                        className="form-control bg-transparent border-0"
                         placeholder="Enter Email address"
                         aria-label="Recipient's username"
                         aria-describedby="button-addon2"
                       />
 
                       <button
-                        class="btn btn-primary"
+                        className="btn btn-primary"
                         type="button"
                         id="button-addon2"
                       >
-                        <i class="bx bxs-paper-plane"></i>
+                        <i className="bx bxs-paper-plane"></i>
                       </button>
                     </div>
                   </div>

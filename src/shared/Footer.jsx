@@ -3,14 +3,14 @@ import React from "react";
 const Footer = () => {
   return (
     <>
-      <footer class="footer">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-sm-6">
+      <footer className="footer">
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col-sm-6">
               <script>document.write(new Date().getFullYear())</script> © Skote.
             </div>
-            <div class="col-sm-6">
-              <div class="text-sm-end d-none d-sm-block">
+            <div className="col-sm-6">
+              <div className="text-sm-end d-none d-sm-block">
                 Design & Develop by Themesbrand
               </div>
             </div>

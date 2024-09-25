@@ -33,7 +33,7 @@ const SideNav = () => {
     return items.map((item, index) => (
       <li key={index}>
         <NavLink
-          to={item.link || "javascript:void(0);"}
+          to={item.link || "#;"}
           className={({ isActive }) =>
             `${item.children ? "has-arrow waves-effect" : "waves-effect"} ${
               isActive ? "active-link" : ""

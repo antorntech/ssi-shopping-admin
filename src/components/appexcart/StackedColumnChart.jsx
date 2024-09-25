@@ -122,7 +122,7 @@ const StackedColumnChart = () => {
   return (
     <div>
       <div className="d-sm-flex flex-wrap align-items-center justify-content-between">
-        <h4 class="card-title mb-4">Email Sent</h4>
+        <h4 className="card-title mb-4">Email Sent</h4>
         {/* Buttons to switch between week, month, and year */}
         <div className="btn-group mb-4" role="group">
           <button

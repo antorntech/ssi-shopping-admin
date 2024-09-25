@@ -666,20 +666,20 @@ Editableform is linked with one of input types, e.g. 'text', 'select' etc.
     Classes 'control-group' and 'editable-error-block' must always present!
     */
   $.fn.editableform.template =
-    '<form class="form-inline editableform">' +
-    '<div class="control-group">' +
-    '<div><div class="editable-input"></div><div class="editable-buttons"></div></div>' +
-    '<div class="editable-error-block"></div>' +
+    '<form className="form-inline editableform">' +
+    '<div className="control-group">' +
+    '<div><div className="editable-input"></div><div className="editable-buttons"></div></div>' +
+    '<div className="editable-error-block"></div>' +
     "</div>" +
     "</form>";
 
   //loading div
-  $.fn.editableform.loading = '<div class="editableform-loading"></div>';
+  $.fn.editableform.loading = '<div className="editableform-loading"></div>';
 
   //buttons
   $.fn.editableform.buttons =
-    '<button type="submit" class="editable-submit">ok</button>' +
-    '<button type="button" class="editable-cancel">cancel</button>';
+    '<button type="submit" className="editable-submit">ok</button>' +
+    '<button type="button" className="editable-cancel">cancel</button>';
 
   //error class attached to control-group
   $.fn.editableform.errorGroupClass = null;
@@ -2441,9 +2441,9 @@ Makes editable any HTML element on the page. Applied as jQuery method.
         @example
         <div id="user">
           <!-- empty -->
-          <a href="#" data-name="username" data-type="text" class="editable-click editable-empty" data-value="" title="Username">Empty</a>
+          <a href="#" data-name="username" data-type="text" className="editable-click editable-empty" data-value="" title="Username">Empty</a>
           <!-- non-empty -->
-          <a href="#" data-name="group" data-type="select" data-source="/groups" data-value="1" class="editable-click" title="Group">Operator</a>
+          <a href="#" data-name="group" data-type="select" data-source="/groups" data-value="1" className="editable-click" title="Group">Operator</a>
         </div>     
         
         <script>
@@ -3090,7 +3090,7 @@ $(function(){
     //render clear button
     renderClear: function () {
       if (this.options.clear) {
-        this.$clear = $('<span class="editable-clear-x"></span>');
+        this.$clear = $('<span className="editable-clear-x"></span>');
         this.$input
           .after(this.$clear)
           .css("padding-right", 24)
@@ -3532,7 +3532,7 @@ $(function(){
         @property tpl 
         @default <div></div>
         **/
-    tpl: '<div class="editable-checklist"></div>',
+    tpl: '<div className="editable-checklist"></div>',
 
     /**
         @property inputclass 
@@ -4198,7 +4198,7 @@ $(function(){
         ampm: ["[Aa]", ""],
       };
 
-      this.$widget = $('<span class="combodate"></span>').html(
+      this.$widget = $('<span className="combodate"></span>').html(
         this.getTemplate()
       );
 
@@ -4253,7 +4253,7 @@ $(function(){
 
         tpl = tpl.replace(
           "{" + token + "}",
-          '<select class="' + k + '"></select>'
+          '<select className="' + k + '"></select>'
         );
       });
 
@@ -4779,7 +4779,7 @@ $(function(){
                     this.clear();
                 }, this));
                 
-                this.$tpl.parent().append($('<div class="editable-clear">').append(this.$clear));  
+                this.$tpl.parent().append($('<div className="editable-clear">').append(this.$clear));  
             } 
             */
     },
@@ -4952,11 +4952,11 @@ Editableform based on Twitter Bootstrap 3
 
   //buttons
   $.fn.editableform.buttons =
-    '<button type="submit" class="btn btn-primary btn-sm editable-submit">' +
-    '<i class="glyphicon glyphicon-ok"></i>' +
+    '<button type="submit" className="btn btn-primary btn-sm editable-submit">' +
+    '<i className="glyphicon glyphicon-ok"></i>' +
     "</button>" +
-    '<button type="button" class="btn btn-default btn-sm editable-cancel">' +
-    '<i class="glyphicon glyphicon-remove"></i>' +
+    '<button type="button" className="btn btn-default btn-sm editable-cancel">' +
+    '<i className="glyphicon glyphicon-remove"></i>' +
     "</button>";
 
   //error classes
@@ -5641,13 +5641,13 @@ Editableform based on Twitter Bootstrap 3
       var dowCnt = this.o.weekStart,
         html = "<tr>";
       if (this.o.calendarWeeks) {
-        var cell = '<th class="cw">&nbsp;</th>';
+        var cell = '<th className="cw">&nbsp;</th>';
         html += cell;
         this.picker.find(".datepicker-days thead tr:first-child").prepend(cell);
       }
       while (dowCnt < this.o.weekStart + 7) {
         html +=
-          '<th class="dow">' +
+          '<th className="dow">' +
           dates[this.o.language].daysMin[dowCnt++ % 7] +
           "</th>";
       }
@@ -5660,7 +5660,7 @@ Editableform based on Twitter Bootstrap 3
         i = 0;
       while (i < 12) {
         html +=
-          '<span class="month">' +
+          '<span className="month">' +
           dates[this.o.language].monthsShort[i++] +
           "</span>";
       }
@@ -5790,7 +5790,7 @@ Editableform based on Twitter Bootstrap 3
               ),
               // Calendar week: ms between thursdays, div ms per day, div 7 days
               calWeek = (th - yth) / 864e5 / 7 + 1;
-            html.push('<td class="cw">' + calWeek + "</td>");
+            html.push('<td className="cw">' + calWeek + "</td>");
           }
         }
         clsName = this.getClassNames(prevMonth);
@@ -5807,7 +5807,7 @@ Editableform based on Twitter Bootstrap 3
 
         clsName = $.unique(clsName);
         html.push(
-          '<td class="' +
+          '<td className="' +
             clsName.join(" ") +
             '"' +
             (tooltip ? ' title="' + tooltip + '"' : "") +
@@ -5854,7 +5854,7 @@ Editableform based on Twitter Bootstrap 3
       year -= 1;
       for (var i = -1; i < 11; i++) {
         html +=
-          '<span class="year' +
+          '<span className="year' +
           (i == -1 ? " old" : i == 10 ? " new" : "") +
           (currentYear == year ? " active" : "") +
           (year < startYear || year > endYear ? " disabled" : "") +
@@ -6612,33 +6612,33 @@ Editableform based on Twitter Bootstrap 3
     headTemplate:
       "<thead>" +
       "<tr>" +
-      '<th class="prev"><i class="icon-arrow-left"/></th>' +
-      '<th colspan="5" class="datepicker-switch"></th>' +
-      '<th class="next"><i class="icon-arrow-right"/></th>' +
+      '<th className="prev"><i className="icon-arrow-left"/></th>' +
+      '<th colspan="5" className="datepicker-switch"></th>' +
+      '<th className="next"><i className="icon-arrow-right"/></th>' +
       "</tr>" +
       "</thead>",
     contTemplate: '<tbody><tr><td colspan="7"></td></tr></tbody>',
     footTemplate:
-      '<tfoot><tr><th colspan="7" class="today"></th></tr><tr><th colspan="7" class="clear"></th></tr></tfoot>',
+      '<tfoot><tr><th colspan="7" className="today"></th></tr><tr><th colspan="7" className="clear"></th></tr></tfoot>',
   };
   DPGlobal.template =
-    '<div class="datepicker">' +
-    '<div class="datepicker-days">' +
-    '<table class=" table-condensed">' +
+    '<div className="datepicker">' +
+    '<div className="datepicker-days">' +
+    '<table className=" table-condensed">' +
     DPGlobal.headTemplate +
     "<tbody></tbody>" +
     DPGlobal.footTemplate +
     "</table>" +
     "</div>" +
-    '<div class="datepicker-months">' +
-    '<table class="table-condensed">' +
+    '<div className="datepicker-months">' +
+    '<table className="table-condensed">' +
     DPGlobal.headTemplate +
     DPGlobal.contTemplate +
     DPGlobal.footTemplate +
     "</table>" +
     "</div>" +
-    '<div class="datepicker-years">' +
-    '<table class="table-condensed">' +
+    '<div className="datepicker-years">' +
+    '<table className="table-condensed">' +
     DPGlobal.headTemplate +
     DPGlobal.contTemplate +
     DPGlobal.footTemplate +
@@ -6774,7 +6774,7 @@ $(function(){
 
         this.$tpl
           .parent()
-          .append($('<div class="editable-clear">').append(this.$clear));
+          .append($('<div className="editable-clear">').append(this.$clear));
       }
     },
 
@@ -6884,7 +6884,7 @@ $(function(){
         @property tpl 
         @default <div></div>
         **/
-    tpl: '<div class="editable-date well"></div>',
+    tpl: '<div className="editable-date well"></div>',
     /**
         @property inputclass 
         @default null
@@ -7012,7 +7012,7 @@ Automatically shown in inline mode.
     /**
         @property tpl 
         **/
-    tpl: '<div class="input-append date"><input type="text"/><span class="add-on"><i class="icon-th"></i></span></div>',
+    tpl: '<div className="input-append date"><input type="text"/><span className="add-on"><i className="icon-th"></i></span></div>',
     /**
         @property inputclass 
         @default 'input-small'
@@ -7141,7 +7141,7 @@ $(function(){
 
         this.$tpl
           .parent()
-          .append($('<div class="editable-clear">').append(this.$clear));
+          .append($('<div className="editable-clear">').append(this.$clear));
       }
     },
 
@@ -7271,7 +7271,7 @@ $(function(){
         @property tpl 
         @default <div></div>
         **/
-    tpl: '<div class="editable-date well"></div>',
+    tpl: '<div className="editable-date well"></div>',
     /**
         @property inputclass 
         @default null
@@ -7382,7 +7382,7 @@ Automatically shown in inline mode.
     /**
         @property tpl 
         **/
-    tpl: '<div class="input-append date"><input type="text"/><span class="add-on"><i class="icon-th"></i></span></div>',
+    tpl: '<div className="input-append date"><input type="text"/><span className="add-on"><i className="icon-th"></i></span></div>',
     /**
         @property inputclass 
         @default 'input-medium'

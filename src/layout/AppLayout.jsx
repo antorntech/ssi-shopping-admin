@@ -2,21 +2,29 @@ import React from "react";
 import Header from "../shared/Header";
 import SideNav from "../shared/SideNav";
 import AppRoutes from "../routes/AppRoutes";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const AppLayout = () => {
+  const username = localStorage.getItem("username");
   return (
     <div>
-      <div id="layout-wrapper">
-        <Header />
-        <SideNav />
-        <div class="main-content">
-          <div class="page-content">
-            <div class="container-fluid">
-              <AppRoutes />
+      {username ? (
+        <div id="layout-wrapper">
+          <Header />
+          <SideNav />
+          <div className="main-content">
+            <div className="page-content">
+              <div className="container-fluid">
+                <AppRoutes />
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      ) : (
+        <AppRoutes />
+      )}
+      <ToastContainer />
     </div>
   );
 };

@@ -16,7 +16,7 @@ const Header = () => {
       title: "James Lemire",
       message: "It will seem like simplified English.",
       time: "1 hour ago",
-      avatar: "assets/images/users/avatar-3.jpg",
+      avatar: "/assets/images/users/avatar-3.jpg",
     },
     {
       id: 3,
@@ -30,8 +30,13 @@ const Header = () => {
 
   const [user] = useState({
     name: "Henry",
-    avatar: "assets/images/users/avatar-1.jpg",
+    avatar: "/assets/images/users/avatar-1.jpg",
   });
+
+  const handleLogOut = () => {
+    localStorage.clear();
+    window.location.href = "/login";
+  };
 
   return (
     <>
@@ -62,18 +67,8 @@ const Header = () => {
               </a>
             </div>
 
-            {/* Hamburger Menu */}
-            <button
-              type="button"
-              className="btn btn-sm px-3 font-size-16 header-item waves-effect"
-              id="vertical-menu-btn"
-              aria-label="Toggle navigation"
-            >
-              <i className="fa fa-fw fa-bars"></i>
-            </button>
-
             {/* App Search */}
-            <form className="app-search d-none d-lg-block">
+            <form className="app-search d-none d-lg-block ms-3">
               <div className="position-relative">
                 <input
                   type="text"
@@ -116,25 +111,12 @@ const Header = () => {
                 </div>
                 <div data-simplebar style={{ maxHeight: "230px" }}>
                   {notifications.map((notification) => (
-                    <a
-                      href="javascript:void(0);"
+                    <Link
+                      to="#"
                       className="text-reset notification-item"
                       key={notification.id}
                     >
                       <div className="d-flex">
-                        {notification.avatar ? (
-                          <img
-                            src={notification.avatar}
-                            className="me-3 rounded-circle avatar-xs"
-                            alt="user-pic"
-                          />
-                        ) : (
-                          <span
-                            className={`avatar-title bg-primary rounded-circle font-size-16 me-3`}
-                          >
-                            <i className={`bx ${notification.icon}`}></i>
-                          </span>
-                        )}
                         <div className="flex-grow-1">
                           <h6 className="mb-1">{notification.title}</h6>
                           <div className="font-size-12 text-muted">
@@ -146,17 +128,17 @@ const Header = () => {
                           </div>
                         </div>
                       </div>
-                    </a>
+                    </Link>
                   ))}
                 </div>
                 <div className="p-2 border-top d-grid">
-                  <a
+                  <Link
                     className="btn btn-sm btn-link font-size-14 text-center"
-                    href="javascript:void(0)"
+                    to="#"
                   >
                     <i className="mdi mdi-arrow-right-circle me-1"></i> View
                     More...
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -182,28 +164,23 @@ const Header = () => {
                 <i className="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
               </button>
               <div className="dropdown-menu dropdown-menu-end">
-                <a className="dropdown-item" href="#">
+                <Link className="dropdown-item" to="#">
                   <i className="bx bx-user font-size-16 align-middle me-1"></i>{" "}
                   Profile
-                </a>
-                <a className="dropdown-item" href="#">
-                  <i className="bx bx-wallet font-size-16 align-middle me-1"></i>{" "}
-                  My Wallet
-                </a>
-                <a className="dropdown-item d-block" href="#">
-                  <span className="badge bg-success float-end">11</span>
+                </Link>
+                <Link className="dropdown-item d-block" to="#">
                   <i className="bx bx-wrench font-size-16 align-middle me-1"></i>{" "}
                   Settings
-                </a>
-                <a className="dropdown-item" href="#">
-                  <i className="bx bx-lock-open font-size-16 align-middle me-1"></i>{" "}
-                  Lock screen
-                </a>
+                </Link>
                 <div className="dropdown-divider"></div>
-                <a className="dropdown-item text-danger" href="#">
+                <button
+                  onClick={handleLogOut}
+                  className="dropdown-item text-danger"
+                  to="#"
+                >
                   <i className="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i>{" "}
                   Logout
-                </a>
+                </button>
               </div>
             </div>
           </div>
