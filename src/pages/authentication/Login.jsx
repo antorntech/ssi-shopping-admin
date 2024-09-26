@@ -150,7 +150,7 @@ const Login = () => {
                   <p>
                     Don't have an account ?{" "}
                     <Link
-                      to="/auth/register"
+                      to="/auth-register"
                       className="fw-medium text-primary"
                     >
                       Signup now

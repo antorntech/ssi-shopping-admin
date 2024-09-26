@@ -163,7 +163,7 @@ const Registration = () => {
                 <div>
                   <p>
                     Already have an account ?{" "}
-                    <Link to="/auth/login" className="fw-medium text-primary">
+                    <Link to="/auth-login" className="fw-medium text-primary">
                       Login now
                     </Link>
                   </p>
