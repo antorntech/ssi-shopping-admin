@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import PageTitle from "../../components/pagetitle/PageTitle";
+import { Link } from "react-router-dom";
 
 const Products = () => {
   const [products, setProducts] = useState([
@@ -77,12 +78,12 @@ const Products = () => {
                           >
                             <i className="fa fa-eye"></i> View
                           </button>
-                          <button
+                          <Link
                             className="btn btn-warning btn-sm me-2"
-                            onClick={() => handleEdit(product.id)}
+                            to={`/edit-product/${product.id}`}
                           >
                             <i className="fa fa-pencil-alt"></i> Edit
-                          </button>
+                          </Link>
                           <button
                             className="btn btn-danger btn-sm"
                             onClick={() => handleDelete(product.id)}

@@ -7,6 +7,7 @@ import Login from "../pages/authentication/Login";
 import Registration from "../pages/authentication/Registration";
 import PasswordRecovery from "../pages/authentication/PasswordRecovery";
 import AuthVerification from "../pages/authentication/AuthVerification";
+import EditProduct from "../pages/products/EditProduct";
 
 function AppRoutes() {
   const user = localStorage.getItem("email");
@@ -18,6 +19,7 @@ function AppRoutes() {
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products />} />
             <Route path="/add-product" element={<AddProduct />} />
+            <Route path="/edit-product/:id" element={<EditProduct />} />
             <Route path="*" element={<Navigate to="/" />} />
           </>
         ) : (
