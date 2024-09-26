@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
-const Login = () => {
+const Registration = () => {
+  const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -13,7 +14,7 @@ const Login = () => {
     localStorage.setItem("username", username);
     localStorage.setItem("password", password);
 
-    toast.success("Login Successful");
+    toast.success("Registration Successful");
     setTimeout(() => {
       window.location.href = "/";
     }, 1000);
@@ -31,8 +32,8 @@ const Login = () => {
                   <div className="row">
                     <div className="col-7">
                       <div className="text-primary p-4">
-                        <h5 className="text-primary">Welcome Back !</h5>
-                        <p>Login to continue to Skote.</p>
+                        <h5 className="text-primary">Free Register</h5>
+                        <p>Registration to continue to Skote.</p>
                       </div>
                     </div>
                     <div className="col-5 align-self-end">
@@ -59,7 +60,7 @@ const Login = () => {
                       </div>
                     </Link>
 
-                    <a href="index.html" className="auth-logo-dark">
+                    <Link to="/" className="auth-logo-dark">
                       <div className="avatar-md profile-user-wid mb-4">
                         <span className="avatar-title rounded-circle bg-light">
                           <img
@@ -70,10 +71,23 @@ const Login = () => {
                           />
                         </span>
                       </div>
-                    </a>
+                    </Link>
                   </div>
                   <div className="p-2">
                     <form className="form-horizontal" onSubmit={handleSubmit}>
+                      <div className="mb-3">
+                        <label htmlFor="email" className="form-label">
+                          Email
+                        </label>
+                        <input
+                          type="text"
+                          className="form-control"
+                          id="email"
+                          placeholder="Enter email"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                        />
+                      </div>
                       <div className="mb-3">
                         <label htmlFor="username" className="form-label">
                           Username
@@ -87,7 +101,6 @@ const Login = () => {
                           onChange={(e) => setUsername(e.target.value)}
                         />
                       </div>
-
                       <div className="mb-3">
                         <label className="form-label">Password</label>
                         <div className="input-group auth-pass-inputgroup">
@@ -115,26 +128,12 @@ const Login = () => {
                         </div>
                       </div>
 
-                      <div className="form-check">
-                        <input
-                          className="form-check-input"
-                          type="checkbox"
-                          id="remember-check"
-                        />
-                        <label
-                          className="form-check-label"
-                          htmlFor="remember-check"
-                        >
-                          Remember me
-                        </label>
-                      </div>
-
                       <div className="mt-3 d-grid">
                         <button
                           className="btn btn-primary waves-effect waves-light"
                           type="submit"
                         >
-                          Log In
+                          Register
                         </button>
                       </div>
 
@@ -182,12 +181,9 @@ const Login = () => {
               <div className="mt-5 text-center">
                 <div>
                   <p>
-                    Don't have an account ?{" "}
-                    <Link
-                      to="/auth/register"
-                      className="fw-medium text-primary"
-                    >
-                      Signup now
+                    Already have an account ?{" "}
+                    <Link to="/auth/login" className="fw-medium text-primary">
+                      Login now
                     </Link>
                   </p>
                   <p>
@@ -205,4 +201,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Registration;
