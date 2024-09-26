@@ -3,21 +3,21 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const Login = () => {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    localStorage.setItem("username", username);
+    localStorage.setItem("email", email);
     localStorage.setItem("password", password);
 
     toast.success("Login Successful");
     setTimeout(() => {
       window.location.href = "/";
     }, 1000);
-    console.log("Form submitted:", { username, password });
+    console.log("Form submitted:", { email, password });
   };
 
   return (
@@ -37,7 +37,7 @@ const Login = () => {
                     </div>
                     <div className="col-5 align-self-end">
                       <img
-                        src="assets/images/profile-img.png"
+                        src="/assets/images/profile-img.png"
                         alt=""
                         className="img-fluid"
                       />
@@ -50,7 +50,7 @@ const Login = () => {
                       <div className="avatar-md profile-user-wid mb-4">
                         <span className="avatar-title rounded-circle bg-light">
                           <img
-                            src="assets/images/logo-light.svg"
+                            src="/assets/images/logo-light.svg"
                             alt=""
                             className="rounded-circle"
                             height="34"
@@ -58,33 +58,20 @@ const Login = () => {
                         </span>
                       </div>
                     </Link>
-
-                    <a href="index.html" className="auth-logo-dark">
-                      <div className="avatar-md profile-user-wid mb-4">
-                        <span className="avatar-title rounded-circle bg-light">
-                          <img
-                            src="assets/images/logo.svg"
-                            alt=""
-                            className="rounded-circle"
-                            height="34"
-                          />
-                        </span>
-                      </div>
-                    </a>
                   </div>
-                  <div className="p-2">
+                  <div className="p-2 mt-2">
                     <form className="form-horizontal" onSubmit={handleSubmit}>
                       <div className="mb-3">
-                        <label htmlFor="username" className="form-label">
-                          Username
+                        <label htmlFor="email" className="form-label">
+                          Email
                         </label>
                         <input
                           type="text"
                           className="form-control"
-                          id="username"
-                          placeholder="Enter username"
-                          value={username}
-                          onChange={(e) => setUsername(e.target.value)}
+                          id="email"
+                          placeholder="Enter email"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
                         />
                       </div>
 
@@ -145,22 +132,6 @@ const Login = () => {
                           <li className="list-inline-item">
                             <Link
                               to="#"
-                              className="social-list-item bg-primary text-white border-primary"
-                            >
-                              <i className="mdi mdi-facebook"></i>
-                            </Link>
-                          </li>
-                          <li className="list-inline-item">
-                            <Link
-                              to="#"
-                              className="social-list-item bg-info text-white border-info"
-                            >
-                              <i className="mdi mdi-twitter"></i>
-                            </Link>
-                          </li>
-                          <li className="list-inline-item">
-                            <Link
-                              to="#"
                               className="social-list-item bg-danger text-white border-danger"
                             >
                               <i className="mdi mdi-google"></i>
@@ -192,8 +163,9 @@ const Login = () => {
                   </p>
                   <p>
                     © <script>document.write(new Date().getFullYear())</script>{" "}
-                    Skote. Crafted with{" "}
-                    <i className="mdi mdi-heart text-danger"></i> by Themesbrand
+                    SSI. Crafted with{" "}
+                    <i className="mdi mdi-heart text-danger"></i> by ANTOR &
+                    SANTO
                   </p>
                 </div>
               </div>

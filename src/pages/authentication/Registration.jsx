@@ -4,14 +4,15 @@ import { toast } from "react-toastify";
 
 const Registration = () => {
   const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [showCPassword, setShowCPassword] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    localStorage.setItem("username", username);
+    localStorage.setItem("email", email);
     localStorage.setItem("password", password);
 
     toast.success("Registration Successful");
@@ -38,7 +39,7 @@ const Registration = () => {
                     </div>
                     <div className="col-5 align-self-end">
                       <img
-                        src="assets/images/profile-img.png"
+                        src="/assets/images/profile-img.png"
                         alt=""
                         className="img-fluid"
                       />
@@ -51,20 +52,7 @@ const Registration = () => {
                       <div className="avatar-md profile-user-wid mb-4">
                         <span className="avatar-title rounded-circle bg-light">
                           <img
-                            src="assets/images/logo-light.svg"
-                            alt=""
-                            className="rounded-circle"
-                            height="34"
-                          />
-                        </span>
-                      </div>
-                    </Link>
-
-                    <Link to="/" className="auth-logo-dark">
-                      <div className="avatar-md profile-user-wid mb-4">
-                        <span className="avatar-title rounded-circle bg-light">
-                          <img
-                            src="assets/images/logo.svg"
+                            src="/assets/images/logo-light.svg"
                             alt=""
                             className="rounded-circle"
                             height="34"
@@ -73,7 +61,7 @@ const Registration = () => {
                       </div>
                     </Link>
                   </div>
-                  <div className="p-2">
+                  <div className="p-2 mt-2">
                     <form className="form-horizontal" onSubmit={handleSubmit}>
                       <div className="mb-3">
                         <label htmlFor="email" className="form-label">
@@ -86,19 +74,6 @@ const Registration = () => {
                           placeholder="Enter email"
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
-                        />
-                      </div>
-                      <div className="mb-3">
-                        <label htmlFor="username" className="form-label">
-                          Username
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="username"
-                          placeholder="Enter username"
-                          value={username}
-                          onChange={(e) => setUsername(e.target.value)}
                         />
                       </div>
                       <div className="mb-3">
@@ -127,7 +102,34 @@ const Registration = () => {
                           </button>
                         </div>
                       </div>
-
+                      <div className="mb-3">
+                        <label className="form-label">Confirm Password</label>
+                        <div className="input-group auth-pass-inputgroup">
+                          <input
+                            type={showCPassword ? "text" : "password"}
+                            className="form-control"
+                            placeholder="Enter confirm password"
+                            aria-label="Confirm Password"
+                            aria-describedby="password-addon"
+                            value={confirmPassword}
+                            onChange={(e) => setConfirmPassword(e.target.value)}
+                          />
+                          <button
+                            className="btn btn-light"
+                            type="button"
+                            id="password-addon"
+                            onClick={() => setShowCPassword(!showCPassword)}
+                          >
+                            <i
+                              className={`mdi ${
+                                showCPassword
+                                  ? "mdi-eye-off"
+                                  : "mdi-eye-outline"
+                              }`}
+                            ></i>
+                          </button>
+                        </div>
+                      </div>
                       <div className="mt-3 d-grid">
                         <button
                           className="btn btn-primary waves-effect waves-light"
@@ -141,22 +143,6 @@ const Registration = () => {
                         <h5 className="font-size-14 mb-3">Sign in with</h5>
 
                         <ul className="list-inline">
-                          <li className="list-inline-item">
-                            <Link
-                              to="#"
-                              className="social-list-item bg-primary text-white border-primary"
-                            >
-                              <i className="mdi mdi-facebook"></i>
-                            </Link>
-                          </li>
-                          <li className="list-inline-item">
-                            <Link
-                              to="#"
-                              className="social-list-item bg-info text-white border-info"
-                            >
-                              <i className="mdi mdi-twitter"></i>
-                            </Link>
-                          </li>
                           <li className="list-inline-item">
                             <Link
                               to="#"
@@ -188,8 +174,9 @@ const Registration = () => {
                   </p>
                   <p>
                     © <script>document.write(new Date().getFullYear())</script>{" "}
-                    Skote. Crafted with{" "}
-                    <i className="mdi mdi-heart text-danger"></i> by Themesbrand
+                    SSI. Crafted with{" "}
+                    <i className="mdi mdi-heart text-danger"></i> by ANTOR &
+                    SANTO
                   </p>
                 </div>
               </div>
