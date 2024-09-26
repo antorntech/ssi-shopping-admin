@@ -7,11 +7,11 @@ import Login from "../pages/authentication/Login";
 import Registration from "../pages/authentication/Registration";
 
 function AppRoutes() {
-  const username = localStorage.getItem("username");
+  const user = localStorage.getItem("email");
   return (
     <>
       <Routes>
-        {username ? (
+        {user ? (
           <>
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products />} />

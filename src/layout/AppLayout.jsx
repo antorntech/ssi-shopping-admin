@@ -6,10 +6,10 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const AppLayout = () => {
-  const username = localStorage.getItem("username");
+  const user = localStorage.getItem("email");
   return (
     <div>
-      {username ? (
+      {user ? (
         <div id="layout-wrapper">
           <Header />
           <SideNav />
