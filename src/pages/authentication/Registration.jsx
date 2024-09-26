@@ -145,13 +145,6 @@ const Registration = () => {
                           <i className="mdi mdi-google"></i>
                         </Link>
                       </div>
-
-                      <div className="mt-3 text-center">
-                        <Link to="/auth-recoverpw" className="text-muted">
-                          <i className="mdi mdi-lock me-1"></i> Forgot your
-                          password?
-                        </Link>
-                      </div>
                     </form>
                   </div>
                 </div>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
+// Sample menu items
 const menuItems = [
   {
     title: "Dashboards",
@@ -19,7 +20,27 @@ const menuItems = [
   // Add more items following the same structure
 ];
 
-const SideNav = () => {
+// MenuBar Component
+export const MenuBar = () => {
+  const toggleSidenav = () => {
+    // Toggle the sidebar visibility by adding/removing class from the body
+    document.body.classList.toggle("sidebar-enable");
+  };
+
+  return (
+    <button
+      type="button"
+      className="btn btn-sm px-3 font-size-16 header-item waves-effect d-lg-none"
+      id="vertical-menu-btn"
+      onClick={toggleSidenav}
+    >
+      <i className="fa fa-fw fa-bars font-size-20"></i>
+    </button>
+  );
+};
+
+// SideNav Component
+export const SideNav = () => {
   const [openMenus, setOpenMenus] = useState({});
 
   const toggleMenu = (menuIndex) => {
@@ -43,7 +64,6 @@ const SideNav = () => {
         >
           {item.icon && <i className={item.icon}></i>}
           <span>{item.title}</span>
-          {/* Show arrow icon if the item has children */}
         </NavLink>
         {item.children && openMenus[index] && (
           <ul className="sub-menu" aria-expanded={openMenus[index]}>
@@ -66,5 +86,3 @@ const SideNav = () => {
     </div>
   );
 };
-
-export default SideNav;

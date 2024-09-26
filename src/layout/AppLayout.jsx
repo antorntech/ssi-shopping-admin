@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../shared/Header";
-import SideNav from "../shared/SideNav";
 import AppRoutes from "../routes/AppRoutes";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { SideNav } from "../shared/SideNav";
 
 const AppLayout = () => {
   const user = localStorage.getItem("email");
+
   return (
     <div>
       {user ? (

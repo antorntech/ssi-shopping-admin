@@ -14,7 +14,7 @@ const Home = () => {
                 <div className="col-7">
                   <div className="text-primary p-3">
                     <h5 className="text-primary">Welcome Back !</h5>
-                    <p>Skote Dashboard</p>
+                    <p>SSI Dashboard</p>
                   </div>
                 </div>
                 <div className="col-5 align-self-end">
@@ -139,9 +139,9 @@ const Home = () => {
                       <h4 className="mb-0">$35, 723</h4>
                     </div>
 
-                    <div className="flex-shrink-0 align-self-center ">
-                      <div className="avatar-sm rounded-circle bg-primary mini-stat-icon">
-                        <span className="avatar-title rounded-circle bg-primary">
+                    <div className="flex-shrink-0 align-self-center">
+                      <div className="mini-stat-icon avatar-sm rounded-circle bg-primary">
+                        <span className="avatar-title">
                           <i className="bx bx-archive-in font-size-24"></i>
                         </span>
                       </div>
@@ -160,8 +160,8 @@ const Home = () => {
                     </div>
 
                     <div className="flex-shrink-0 align-self-center">
-                      <div className="avatar-sm rounded-circle bg-primary mini-stat-icon">
-                        <span className="avatar-title rounded-circle bg-primary">
+                      <div className="mini-stat-icon avatar-sm rounded-circle bg-primary">
+                        <span className="avatar-title">
                           <i className="bx bx-purchase-tag-alt font-size-24"></i>
                         </span>
                       </div>

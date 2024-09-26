@@ -90,7 +90,7 @@ const PasswordRecovery = () => {
               </div>
               <div className="mt-5 text-center">
                 <p>
-                  Remember It ?
+                  Remember It ?{" "}
                   <Link to="/auth-login" className="fw-medium text-primary">
                     Sign In here
                   </Link>

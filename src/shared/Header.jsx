@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { MenuBar } from "./SideNav";
 
 const Header = () => {
   const [notifications] = useState([
@@ -67,7 +68,9 @@ const Header = () => {
               </a>
             </div>
 
-            {/* App Search */}
+            <MenuBar />
+
+            {/* App Search (Visible only on larger screens) */}
             <form className="app-search d-none d-lg-block ms-3">
               <div className="position-relative">
                 <input
@@ -176,7 +179,6 @@ const Header = () => {
                 <button
                   onClick={handleLogOut}
                   className="dropdown-item text-danger"
-                  to="#"
                 >
                   <i className="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i>{" "}
                   Logout
