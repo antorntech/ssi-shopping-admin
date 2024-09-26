@@ -1,9 +1,3 @@
-:root {
-  --bs-primary: #007bff;
-  --bs-warning: #ffc107;
-  --bs-success: #28a745;
-}
-
 .tag-input {
   display: flex;
   flex-wrap: wrap;
