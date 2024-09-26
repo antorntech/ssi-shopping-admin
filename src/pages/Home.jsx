@@ -5,10 +5,7 @@ import StackedColumnChart from "../components/appexcart/StackedColumnChart";
 const Home = () => {
   return (
     <>
-      {/* <!-- start page title --> */}
       <PageTitle title="Dashboard" />
-      {/* <!-- end page title --> */}
-
       <div className="row">
         <div className="col-xl-4">
           <div className="card overflow-hidden">
@@ -174,7 +171,6 @@ const Home = () => {
               </div>
             </div>
           </div>
-          {/* <!-- end row --> */}
 
           <div className="card">
             <div className="card-body">

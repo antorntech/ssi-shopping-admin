@@ -79,7 +79,7 @@ const StackedColumnChart = () => {
       series: getChartData(chartData).series,
       chart: {
         type: "bar",
-        height: 350,
+        height: 317,
         stacked: true,
       },
       plotOptions: {
@@ -112,8 +112,6 @@ const StackedColumnChart = () => {
     );
 
     chart.render();
-
-    // Cleanup chart when component unmounts or updates
     return () => {
       chart.destroy();
     };
@@ -123,7 +121,6 @@ const StackedColumnChart = () => {
     <div>
       <div className="d-sm-flex flex-wrap align-items-center justify-content-between">
         <h4 className="card-title mb-4">Email Sent</h4>
-        {/* Buttons to switch between week, month, and year */}
         <div className="btn-group mb-4" role="group">
           <button
             type="button"
@@ -155,7 +152,6 @@ const StackedColumnChart = () => {
         </div>
       </div>
 
-      {/* Chart Container */}
       <div
         id="stacked-column-chart"
         className="apex-charts"
