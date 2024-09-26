@@ -23,7 +23,7 @@ function AppRoutes() {
             <Route path="/" element={<Login />} />
             <Route path="/auth/login" element={<Login />} />
             <Route path="/auth/register" element={<Registration />} />
-            <Route path="*" element={<Navigate to="/login" />} />
+            <Route path="*" element={<Navigate to="/auth/login" />} />
           </>
         )}
       </Routes>

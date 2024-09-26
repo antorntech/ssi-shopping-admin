@@ -139,22 +139,17 @@ const Registration = () => {
                         </button>
                       </div>
 
-                      <div className="mt-4 text-center">
-                        <h5 className="font-size-14 mb-3">Sign in with</h5>
-
-                        <ul className="list-inline">
-                          <li className="list-inline-item">
-                            <Link
-                              to="#"
-                              className="social-list-item bg-danger text-white border-danger"
-                            >
-                              <i className="mdi mdi-google"></i>
-                            </Link>
-                          </li>
-                        </ul>
+                      <div className="mt-4 text-center d-flex align-items-center justify-content-center gap-2">
+                        <h5 className="font-size-16 m-0">Sign in with</h5>
+                        <Link
+                          to="#"
+                          className="social-list-item bg-danger text-white border-danger"
+                        >
+                          <i className="mdi mdi-google"></i>
+                        </Link>
                       </div>
 
-                      <div className="mt-4 text-center">
+                      <div className="mt-3 text-center">
                         <Link to="/auth-recoverpw" className="text-muted">
                           <i className="mdi mdi-lock me-1"></i> Forgot your
                           password?
