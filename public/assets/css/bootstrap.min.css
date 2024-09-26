@@ -1,8 +1,4 @@
-@charset "UTF-8"; /*!
- * Bootstrap  v5.3.2 (https://getbootstrap.com/)
- * Copyright 2011-2023 The Bootstrap Authors
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- */
+@charset "UTF-8"; 
 :root,
 [data-bs-theme="light"] {
   --bs-blue: #556ee6;
@@ -37,7 +33,7 @@
   --bs-pink: #e83e8c;
   --bs-light: #eff2f7;
   --bs-dark: #343a40;
-  --bs-primary-rgb: 85, 110, 230;
+  --bs-primary-rgb: #6cb93b;
   --bs-secondary-rgb: 116, 120, 141;
   --bs-success-rgb: 52, 195, 143;
   --bs-info-rgb: 80, 165, 241;
@@ -9365,7 +9361,7 @@ fieldset:disabled .btn {
 }
 .text-primary {
   --bs-text-opacity: 1;
-  color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity)) !important;
+  color: var(--bs-primary-rgb) !important;
 }
 .text-secondary {
   --bs-text-opacity: 1;
@@ -9766,7 +9762,7 @@ fieldset:disabled .btn {
   --bs-bg-opacity: 1;
 }
 .bg-primary-subtle {
-  background-color: var(--bs-primary-bg-subtle) !important;
+  background-color: #6bb93b71 !important;
 }
 .bg-secondary-subtle {
   background-color: var(--bs-secondary-bg-subtle) !important;

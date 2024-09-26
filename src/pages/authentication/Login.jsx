@@ -127,10 +127,7 @@ const Login = () => {
 
                       <div className="mt-4 text-center d-flex align-items-center justify-content-center gap-2">
                         <h5 className="font-size-16 m-0">Sign in with</h5>
-                        <Link
-                          to="#"
-                          className="social-list-item bg-danger text-white border-danger"
-                        >
+                        <Link to="#" className="social-button text-white">
                           <i className="mdi mdi-google"></i>
                         </Link>
                       </div>

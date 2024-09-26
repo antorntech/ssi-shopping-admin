@@ -55,3 +55,21 @@
   font-weight: bold;
   color: #007bff;
 }
+
+.social-button {
+  height: 2rem;
+  width: 2rem;
+  line-height: calc(2rem - 4px);
+  display: block;
+  border: 2px solid #6cb93b;
+  background-color: #6cb93b;
+  border-radius: 5px;
+  text-align: center;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.btn-primary {
+  background-color: #6cb93b !important;
+  border-color: #6cb93b !important;
+}
