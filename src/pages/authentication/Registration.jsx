@@ -34,7 +34,7 @@ const Registration = () => {
                     <div className="col-7">
                       <div className="text-primary p-4">
                         <h5 className="text-primary">Free Register</h5>
-                        <p>Registration to continue to Skote.</p>
+                        <p>Registration to continue to SSI.</p>
                       </div>
                     </div>
                     <div className="col-5 align-self-end">
