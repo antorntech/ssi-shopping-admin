@@ -3,32 +3,6 @@ import { Link } from "react-router-dom";
 import { MenuBar } from "./SideNav";
 
 const Header = () => {
-  const [notifications] = useState([
-    {
-      id: 1,
-      title: "Your order is placed",
-      message: "If several languages coalesce the grammar",
-      time: "3 min ago",
-      icon: "bx-cart",
-      avatar: null,
-    },
-    {
-      id: 2,
-      title: "James Lemire",
-      message: "It will seem like simplified English.",
-      time: "1 hour ago",
-      avatar: "/assets/images/users/avatar-3.jpg",
-    },
-    {
-      id: 3,
-      title: "Your item is shipped",
-      message: "If several languages coalesce the grammar",
-      time: "3 min ago",
-      icon: "bx-badge-check",
-      avatar: null,
-    },
-  ]);
-
   const [user] = useState({
     name: "Henry",
     avatar: "/assets/images/users/avatar-1.jpg",
@@ -85,67 +59,6 @@ const Header = () => {
           </div>
 
           <div className="d-flex">
-            {/* Notifications Dropdown */}
-            <div className="dropdown d-inline-block">
-              <button
-                type="button"
-                className="btn header-item noti-icon waves-effect"
-                id="page-header-notifications-dropdown"
-                data-bs-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-                aria-label="Notifications"
-              >
-                <i className="bx bx-bell bx-tada"></i>
-                <span className="badge bg-danger rounded-pill">3</span>
-              </button>
-              <div className="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0">
-                <div className="p-3">
-                  <div className="row align-items-center">
-                    <div className="col">
-                      <h6 className="m-0">Notifications</h6>
-                    </div>
-                    <div className="col-auto">
-                      <a href="#!" className="small">
-                        View All
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div data-simplebar style={{ maxHeight: "230px" }}>
-                  {notifications.map((notification) => (
-                    <Link
-                      to="#"
-                      className="text-reset notification-item"
-                      key={notification.id}
-                    >
-                      <div className="d-flex">
-                        <div className="flex-grow-1">
-                          <h6 className="mb-1">{notification.title}</h6>
-                          <div className="font-size-12 text-muted">
-                            <p className="mb-1">{notification.message}</p>
-                            <p className="mb-0">
-                              <i className="mdi mdi-clock-outline"></i>{" "}
-                              <span>{notification.time}</span>
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-                <div className="p-2 border-top d-grid">
-                  <Link
-                    className="btn btn-sm btn-link font-size-14 text-center"
-                    to="#"
-                  >
-                    <i className="mdi mdi-arrow-right-circle me-1"></i> View
-                    More...
-                  </Link>
-                </div>
-              </div>
-            </div>
-
             {/* User Dropdown */}
             <div className="dropdown d-inline-block">
               <button
