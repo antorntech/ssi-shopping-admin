@@ -21,7 +21,7 @@ const Header = () => {
             {/* LOGO */}
             <div className="navbar-brand-box">
               <Link to="/" className="logo logo-dark">
-                <img src="assets/images/logo-dark.png" alt="logo" height="25" />
+                <img src="assets/images/logo-dark.png" alt="logo" height="45" />
               </Link>
 
               <a href="index.html" className="logo logo-light">
