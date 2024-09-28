@@ -73,19 +73,19 @@ const Products = () => {
                         <td>{product.category}</td>
                         <td>
                           <button
-                            className="btn btn-info btn-sm me-2"
+                            className="btn border border-secondary btn-sm me-2"
                             onClick={() => handleView(product.id)}
                           >
                             <i className="fa fa-eye"></i> View
                           </button>
                           <Link
-                            className="btn btn-warning btn-sm me-2"
+                            className="btn border border-secondary btn-sm me-2"
                             to={`/edit-product/${product.id}`}
                           >
                             <i className="fa fa-pencil-alt"></i> Edit
                           </Link>
                           <button
-                            className="btn btn-danger btn-sm"
+                            className="btn border border-secondary btn-sm"
                             onClick={() => handleDelete(product.id)}
                           >
                             <i className="fa fa-trash"></i> Delete

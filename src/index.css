@@ -45,10 +45,7 @@
   cursor: pointer;
 }
 
-.active-link {
-  font-weight: bold;
-  color: #007bff;
-}
+/* menu style */
 
 .social-button {
   height: 2rem;
