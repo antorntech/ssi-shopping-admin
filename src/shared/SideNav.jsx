@@ -26,6 +26,11 @@ const menuItems = [
       { title: "Add Gift", link: "/add-gift" },
     ],
   },
+  {
+    title: "Orders",
+    link: "/orders",
+    icon: "bx bx-store",
+  },
 ];
 
 // MenuBar Component
@@ -109,7 +114,6 @@ export const SideNav = () => {
                                 padding: "8px 15px",
                                 fontSize: "14px",
                                 color: isActive ? "#6CB93B" : "#333",
-                                fontWeight: isActive ? "bold" : "normal",
                                 borderRadius: "4px",
                                 transition: "color 0.3s ease",
                               })}
@@ -133,7 +137,6 @@ export const SideNav = () => {
                       padding: "10px 15px",
                       fontSize: "16px",
                       color: isActive ? "#6CB93B" : "#333",
-                      fontWeight: isActive ? "bold" : "normal",
                       borderRadius: "4px",
                       transition: "background-color 0.3s ease",
                       backgroundColor: isActive ? "#e6f7e6" : "transparent",
