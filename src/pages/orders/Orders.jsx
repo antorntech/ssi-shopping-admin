@@ -358,12 +358,12 @@ const Orders = () => {
                     <div className="text-end">
                       <button
                         type="button"
-                        className="btn btn-outline-secondary"
+                        className="btn btn-outline-secondary me-2"
                         data-bs-dismiss="modal"
                       >
                         Cancel
                       </button>
-                      <button type="submit" className="btn btn-success">
+                      <button type="submit" className="btn btn-primary">
                         Create
                       </button>
                     </div>

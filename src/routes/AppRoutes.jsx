@@ -9,6 +9,9 @@ import PasswordRecovery from "../pages/authentication/PasswordRecovery";
 import AuthVerification from "../pages/authentication/AuthVerification";
 import EditProduct from "../pages/products/EditProduct";
 import Orders from "../pages/orders/Orders";
+import Gifts from "../pages/gifts/Gifts";
+import AddGift from "../pages/gifts/AddGift";
+import Points from "../pages/points/Points";
 
 function AppRoutes() {
   const user = localStorage.getItem("email");
@@ -21,7 +24,10 @@ function AppRoutes() {
             <Route path="/products" element={<Products />} />
             <Route path="/add-product" element={<AddProduct />} />
             <Route path="/edit-product/:id" element={<EditProduct />} />
+            <Route path="/gifts" element={<Gifts />} />
+            <Route path="/add-gift" element={<AddGift />} />
             <Route path="/orders" element={<Orders />} />
+            <Route path="/points" element={<Points />} />
             <Route path="*" element={<Navigate to="/" />} />
           </>
         ) : (

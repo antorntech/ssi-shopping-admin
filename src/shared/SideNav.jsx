@@ -20,7 +20,7 @@ const menuItems = [
   {
     title: "Gifts",
     link: "#",
-    icon: "bx bx-store",
+    icon: "bx bx-gift",
     children: [
       { title: "Gifts", link: "/gifts" },
       { title: "Add Gift", link: "/add-gift" },
@@ -29,7 +29,12 @@ const menuItems = [
   {
     title: "Orders",
     link: "/orders",
-    icon: "bx bx-store",
+    icon: "bx bx-cart",
+  },
+  {
+    title: "Points",
+    link: "/points",
+    icon: "bx bx-bitcoin",
   },
 ];
 
@@ -79,7 +84,6 @@ export const SideNav = () => {
                         justifyContent: "space-between",
                         padding: "10px 15px",
                         cursor: "pointer",
-                        borderRadius: "4px",
                         backgroundColor:
                           openMenu === index ? "#e6f7e6" : "transparent",
                         transition: "background-color 0.3s ease",
@@ -114,7 +118,6 @@ export const SideNav = () => {
                                 padding: "8px 15px",
                                 fontSize: "14px",
                                 color: isActive ? "#6CB93B" : "#333",
-                                borderRadius: "4px",
                                 transition: "color 0.3s ease",
                               })}
                               activeStyle={{
@@ -137,7 +140,6 @@ export const SideNav = () => {
                       padding: "10px 15px",
                       fontSize: "16px",
                       color: isActive ? "#6CB93B" : "#333",
-                      borderRadius: "4px",
                       transition: "background-color 0.3s ease",
                       backgroundColor: isActive ? "#e6f7e6" : "transparent",
                     })}

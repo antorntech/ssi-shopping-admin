@@ -78,7 +78,7 @@ const AddProduct = () => {
 
               <form onSubmit={handleSubmit}>
                 <div className="row">
-                  <div className="col-sm-6">
+                  <div className="col-sm-4">
                     {[
                       "productName",
                       "manufacturerName",
@@ -104,8 +104,7 @@ const AddProduct = () => {
                       </div>
                     ))}
                   </div>
-
-                  <div className="col-sm-6">
+                  <div className="col-sm-4">
                     <div className="mb-3">
                       <label className="control-label">Category</label>
                       <select
@@ -157,8 +156,74 @@ const AddProduct = () => {
                       />
                     </div>
                   </div>
-                </div>
+                  <div className="col-sm-4">
+                    {/* File Upload Section */}
+                    <div className="card">
+                      <div className="card-body">
+                        <h4 className="card-title mb-3">Product Images</h4>
 
+                        <Dropzone onDrop={handleDrop} accept="image/*" multiple>
+                          {({ getRootProps, getInputProps }) => (
+                            <div {...getRootProps({ className: "dropzone" })}>
+                              <input {...getInputProps()} />
+                              <div className="dz-message needsclick">
+                                <div className="mb-3">
+                                  <i className="display-4 text-muted bx bxs-cloud-upload"></i>
+                                </div>
+                                <h4>Drop files here or click to upload.</h4>
+                              </div>
+                            </div>
+                          )}
+                        </Dropzone>
+
+                        <ul
+                          className="list-unstyled mb-0"
+                          id="dropzone-preview"
+                        >
+                          {files.map((file, index) => (
+                            <li
+                              className="mt-2"
+                              key={index}
+                              id="dropzone-preview-list"
+                            >
+                              <div className="border rounded">
+                                <div className="d-flex p-2">
+                                  <div className="flex-shrink-0 me-3">
+                                    <div className="avatar-sm bg-light rounded">
+                                      <img
+                                        className="img-fluid rounded d-block"
+                                        src={file.preview}
+                                        alt={file.name}
+                                      />
+                                    </div>
+                                  </div>
+                                  <div className="flex-grow-1">
+                                    <div className="pt-1">
+                                      <h5 className="fs-md mb-1">
+                                        {file.name}
+                                      </h5>
+                                      <p className="fs-sm text-muted mb-0">
+                                        {(file.size / 1024).toFixed(2)} KB
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <div className="flex-shrink-0 ms-3">
+                                    <button
+                                      onClick={() => handleRemoveFile(file)}
+                                      className="btn btn-sm btn-danger"
+                                    >
+                                      Delete
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <div className="d-flex flex-wrap gap-2">
                   <button
                     type="submit"
@@ -174,63 +239,6 @@ const AddProduct = () => {
                   </button>
                 </div>
               </form>
-            </div>
-          </div>
-
-          {/* File Upload Section */}
-          <div className="card">
-            <div className="card-body">
-              <h4 className="card-title mb-3">Product Images</h4>
-
-              <Dropzone onDrop={handleDrop} accept="image/*" multiple>
-                {({ getRootProps, getInputProps }) => (
-                  <div {...getRootProps({ className: "dropzone" })}>
-                    <input {...getInputProps()} />
-                    <div className="dz-message needsclick">
-                      <div className="mb-3">
-                        <i className="display-4 text-muted bx bxs-cloud-upload"></i>
-                      </div>
-                      <h4>Drop files here or click to upload.</h4>
-                    </div>
-                  </div>
-                )}
-              </Dropzone>
-
-              <ul className="list-unstyled mb-0" id="dropzone-preview">
-                {files.map((file, index) => (
-                  <li className="mt-2" key={index} id="dropzone-preview-list">
-                    <div className="border rounded">
-                      <div className="d-flex p-2">
-                        <div className="flex-shrink-0 me-3">
-                          <div className="avatar-sm bg-light rounded">
-                            <img
-                              className="img-fluid rounded d-block"
-                              src={file.preview}
-                              alt={file.name}
-                            />
-                          </div>
-                        </div>
-                        <div className="flex-grow-1">
-                          <div className="pt-1">
-                            <h5 className="fs-md mb-1">{file.name}</h5>
-                            <p className="fs-sm text-muted mb-0">
-                              {(file.size / 1024).toFixed(2)} KB
-                            </p>
-                          </div>
-                        </div>
-                        <div className="flex-shrink-0 ms-3">
-                          <button
-                            onClick={() => handleRemoveFile(file)}
-                            className="btn btn-sm btn-danger"
-                          >
-                            Delete
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                ))}
-              </ul>
             </div>
           </div>
 
