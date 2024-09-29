@@ -229,7 +229,7 @@ const AddProduct = () => {
                     type="submit"
                     className="btn btn-primary waves-effect waves-light"
                   >
-                    Save Changes
+                    Submit
                   </button>
                   <button
                     type="button"
@@ -243,7 +243,7 @@ const AddProduct = () => {
           </div>
 
           {/* Meta Data Section */}
-          <div className="card">
+          {/* <div className="card">
             <div className="card-body">
               <h4 className="card-title">Meta Data</h4>
               <p className="card-title-desc">Fill all information below</p>
@@ -303,7 +303,7 @@ const AddProduct = () => {
                 </div>
               </form>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </>
