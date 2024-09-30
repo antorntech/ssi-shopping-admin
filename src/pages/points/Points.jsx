@@ -12,8 +12,20 @@ const Points = () => {
   const fetchPoints = () => {
     // Fetch data from API (Mocked data)
     setPoints([
-      { id: 1, email: "tYjJH@example.com", point: 10 },
-      { id: 2, email: "pXKQa@example.com", point: 20 },
+      {
+        id: 1,
+        email: "tYjJH@example.com",
+        point: 10,
+        createdAt: "2022-01-01",
+        updatedAt: "2022-01-01",
+      },
+      {
+        id: 2,
+        email: "pXKQa@example.com",
+        point: 20,
+        createdAt: "2022-01-01",
+        updatedAt: "2022-01-01",
+      },
     ]);
   };
 
@@ -37,6 +49,9 @@ const Points = () => {
                     <tr>
                       <th>Email</th>
                       <th>Points</th>
+                      <th>CreatedAt</th>
+                      <th>UpdatedAt</th>
+                      <th>Actions</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -45,6 +60,8 @@ const Points = () => {
                         <tr key={index}>
                           <td>{item.email}</td>
                           <td>{item.point}</td>
+                          <td>{item.createdAt}</td>
+                          <td>{item.updatedAt}</td>
                           <td>
                             <button
                               className="btn border border-secondary btn-sm"
