@@ -204,11 +204,15 @@ const Gifts = () => {
         id: 1,
         image: { preview: "/assets/images/default-ui-image.jpg" },
         price: 10,
+        createdAt: "2022-01-01",
+        updatedAt: "2022-01-01",
       },
       {
         id: 2,
         image: { preview: "/assets/images/default-ui-image.jpg" },
         price: 20,
+        createdAt: "2022-01-01",
+        updatedAt: "2022-01-01",
       },
     ]);
   };
@@ -235,6 +239,8 @@ const Gifts = () => {
                     <tr>
                       <th>Image</th>
                       <th>Price</th>
+                      <th>CreatedAt</th>
+                      <th>UpdatedAt</th>
                       <th>Actions</th>
                     </tr>
                   </thead>
@@ -250,10 +256,12 @@ const Gifts = () => {
                               }
                               alt={gift.image.name || "Gift Image"}
                               className="img-fluid rounded"
-                              style={{ width: "150px", height: "100px" }}
+                              style={{ width: "90px", height: "60px" }}
                             />
                           </td>
                           <td>{gift.price}</td>
+                          <td>{gift.createdAt}</td>
+                          <td>{gift.updatedAt}</td>
                           <td>
                             <Link
                               className="btn border border-secondary btn-sm me-2"
