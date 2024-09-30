@@ -73,9 +73,6 @@ const AddProduct = () => {
         <div className="col-12">
           <div className="card">
             <div className="card-body">
-              <h4 className="card-title">Basic Information</h4>
-              <p className="card-title-desc">Fill all information below</p>
-
               <form onSubmit={handleSubmit}>
                 <div className="row">
                   <div className="col-sm-4">
@@ -96,7 +93,6 @@ const AddProduct = () => {
                           name={field}
                           type="text"
                           className="form-control"
-                          placeholder={field.replace(/([A-Z])/g, " $1")}
                           value={formData[field]}
                           onChange={handleChange}
                           required
@@ -113,7 +109,7 @@ const AddProduct = () => {
                         onChange={handleChange}
                         value={formData.category}
                       >
-                        <option value="">Select</option>
+                        <option value="" disabled selected />
                         <option value="FA">Fashion</option>
                         <option value="EL">Electronic</option>
                       </select>
@@ -135,7 +131,6 @@ const AddProduct = () => {
                           value={newFeature}
                           onChange={handleFeatureInputChange}
                           onKeyDown={handleAddFeature}
-                          placeholder="Type a feature and press Enter"
                           className="form-control feature-input"
                         />
                       </div>
@@ -148,7 +143,6 @@ const AddProduct = () => {
                         className="form-control"
                         id="productDescription"
                         rows="5"
-                        placeholder="Product Description"
                         name="productDescription"
                         value={formData.productDescription}
                         onChange={handleChange}
@@ -170,7 +164,9 @@ const AddProduct = () => {
                                 <div className="mb-3">
                                   <i className="display-4 text-muted bx bxs-cloud-upload"></i>
                                 </div>
-                                <h4>Drop files here or click to upload.</h4>
+                                <h4 className="text-center">
+                                  Drop files here or click to upload.
+                                </h4>
                               </div>
                             </div>
                           )}
@@ -230,12 +226,6 @@ const AddProduct = () => {
                     className="btn btn-primary waves-effect waves-light"
                   >
                     Submit
-                  </button>
-                  <button
-                    type="button"
-                    className="btn btn-secondary waves-effect waves-light"
-                  >
-                    Cancel
                   </button>
                 </div>
               </form>

@@ -1,65 +1,52 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Dropzone from "react-dropzone";
+import { useParams, useNavigate } from "react-router-dom";
 import PageTitle from "../../components/pagetitle/PageTitle";
 
-const AddGift = () => {
+const EditGift = () => {
+  const { id } = useParams(); // Get the gift ID from the URL
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     price: 0,
+    image: { preview: "" },
   });
+  const [files, setFiles] = useState(null);
 
-  // Set initial file with default image
-  const [file, setFile] = useState({
-    preview: "/assets/images/default-ui-image.jpg",
-    name: "Default Image",
-  });
+  useEffect(() => {
+    // Fetch the gift data based on the ID (Mocked for now)
+    const giftData = {
+      id,
+      price: 20,
+      image: { preview: "/assets/images/default-ui-image.jpg" },
+    };
+    setFormData(giftData);
+  }, [id]);
+
+  const handleDrop = (acceptedFiles) => {
+    const selectedFile = acceptedFiles[0];
+    if (selectedFile) {
+      const preview = URL.createObjectURL(selectedFile);
+      setFiles(selectedFile);
+      setFormData({ ...formData, image: { preview } });
+    }
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleDrop = (acceptedFiles) => {
-    const selectedFile = acceptedFiles[0];
-    if (selectedFile) {
-      const preview = URL.createObjectURL(selectedFile);
-      setFile(Object.assign(selectedFile, { preview }));
-    }
-  };
-
-  const handleRemoveFile = () => {
-    if (file) {
-      URL.revokeObjectURL(file.preview);
-      setFile({
-        preview: "/assets/images/default-ui-image.jpg", // Reset to default image
-        name: "Default Image",
-      });
-    }
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    const data = new FormData();
-    data.append("price", formData.price);
-    if (file) {
-      data.append("file", file); // Send the selected file
-    }
-    console.log(formData);
-    // fetch("/api/gifts", {
-    //   method: "POST",
-    //   body: data,
-    // })
-    //   .then((response) => response.json())
-    //   .then((data) => {
-    //     console.log("Success:", data);
-    //   })
-    //   .catch((error) => {
-    //     console.error("Error:", error);
-    //   });
+    // Submit the updated data to the API
+    const updatedGift = { ...formData, image: files };
+    console.log("Updated gift data: ", updatedGift);
+    navigate("/gifts"); // Redirect back to the Gifts page after saving
   };
 
   return (
     <>
-      <PageTitle title="Add Gift" />
+      <PageTitle title="Edit Gift" />
       <div className="row">
         <div className="col-12">
           <div className="card">
@@ -79,8 +66,6 @@ const AddGift = () => {
                         required
                       />
                     </div>
-
-                    {/* File Upload Section */}
                     <div className="card">
                       <div className="card-body p-0">
                         <h5 className="font-size-14 my-3">Upload Banner</h5>
@@ -97,7 +82,7 @@ const AddGift = () => {
                                   <i className="display-4 text-muted bx bxs-cloud-upload"></i>
                                 </div>
                                 <h4 className="text-center">
-                                  Drop file here or click to upload.
+                                  Drop files here or click to upload.
                                 </h4>
                               </div>
                             </div>
@@ -106,33 +91,25 @@ const AddGift = () => {
                       </div>
                     </div>
                   </div>
-
                   <div className="col-sm-6">
                     <div className="w-100 h-100">
                       <img
                         className="img-fluid rounded d-block mb-3"
-                        src={file.preview}
-                        alt={file.name}
+                        src={
+                          formData.image.preview ||
+                          "/assets/images/default-ui-image.jpg"
+                        }
+                        alt="Gift Banner"
                       />
-                      <button
-                        onClick={handleRemoveFile}
-                        className="btn btn-sm btn-danger"
-                        disabled={file.name === "Default Image"} // Disable button if the image is the default one
-                      >
-                        Delete
-                      </button>
                     </div>
                   </div>
                 </div>
-
-                <div className="d-flex flex-wrap gap-2">
-                  <button
-                    type="submit"
-                    className="btn btn-primary waves-effect waves-light"
-                  >
-                    Submit
-                  </button>
-                </div>
+                <button
+                  type="submit"
+                  className="btn btn-primary waves-effect waves-light"
+                >
+                  Update
+                </button>
               </form>
             </div>
           </div>
@@ -142,4 +119,4 @@ const AddGift = () => {
   );
 };
 
-export default AddGift;
+export default EditGift;

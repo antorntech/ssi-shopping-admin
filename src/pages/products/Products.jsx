@@ -10,6 +10,9 @@ const Products = () => {
       brand: "Apple",
       price: "$999",
       category: "Electronics",
+      quantity: 5,
+      status: "In Stock",
+      image: { preview: "/assets/images/default-ui-image.jpg" },
     },
     {
       id: 2,
@@ -17,6 +20,9 @@ const Products = () => {
       brand: "Apple",
       price: "$1999",
       category: "Electronics",
+      quantity: 0,
+      status: "Out of Stock",
+      image: { preview: "/assets/images/default-ui-image.jpg" },
     },
     {
       id: 3,
@@ -24,6 +30,9 @@ const Products = () => {
       brand: "Nike",
       price: "$150",
       category: "Fashion",
+      quantity: 8,
+      status: "In Stock",
+      image: { preview: "/assets/images/default-ui-image.jpg" },
     },
   ]);
 
@@ -56,10 +65,13 @@ const Products = () => {
                   <thead>
                     <tr>
                       <th>#</th>
-                      <th>Product Name</th>
+                      <th>Image</th>
+                      <th>Name</th>
                       <th>Brand</th>
                       <th>Price</th>
                       <th>Category</th>
+                      <th>Quantity</th>
+                      <th>Status</th>
                       <th>Actions</th>
                     </tr>
                   </thead>
@@ -67,17 +79,20 @@ const Products = () => {
                     {products.map((product, index) => (
                       <tr key={product.id}>
                         <td>{index + 1}</td>
+                        <td>
+                          <img
+                            src={product.image.preview}
+                            alt={product.name}
+                            style={{ width: "80px", height: "50px" }}
+                          />
+                        </td>
                         <td>{product.name}</td>
                         <td>{product.brand}</td>
                         <td>{product.price}</td>
                         <td>{product.category}</td>
+                        <td>{product.quantity}</td>
+                        <td>{product.status}</td>
                         <td>
-                          <button
-                            className="btn border border-secondary btn-sm me-2"
-                            onClick={() => handleView(product.id)}
-                          >
-                            <i className="fa fa-eye"></i> View
-                          </button>
                           <Link
                             className="btn border border-secondary btn-sm me-2"
                             to={`/edit-product/${product.id}`}

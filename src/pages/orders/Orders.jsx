@@ -142,18 +142,7 @@ const Orders = () => {
                     </div>
                   </div>
                 </div>
-                <div className="col-sm-8">
-                  <div className="text-sm-end">
-                    <button
-                      type="button"
-                      data-bs-toggle="modal"
-                      data-bs-target="#newOrderModal"
-                      className="btn btn-primary btn-rounded waves-effect waves-light mb-2 me-2 addOrder-modal"
-                    >
-                      <i className="mdi mdi-plus me-1" /> Add New Order
-                    </button>
-                  </div>
-                </div>
+                <div className="col-sm-8"></div>
               </div>
               <div className="table-responsive">
                 <table
